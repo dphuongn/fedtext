@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-#SBATCH --job-name=ag_news
+#SBATCH --job-name=ag
 
 #SBATCH --partition=gpu
 #SBATCH --gres=gpu:1
@@ -12,8 +12,8 @@
 #SBATCH --mail-user=<dphuong@iastate.edu>
 #SBATCH --mail-type=END
 
-#SBATCH --output=ag_news.out
-#SBATCH --error=ag_news.err
+#SBATCH --output=ag.out
+#SBATCH --error=ag.err
 
 #SBATCH --exclude=singularity
 

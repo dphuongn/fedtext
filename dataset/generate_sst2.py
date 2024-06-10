@@ -11,7 +11,7 @@ from utils.dataset_utils_new import check, process_dataset, separate_data, separ
 random.seed(1)
 np.random.seed(1)
 
-dir_path = "sst2"
+dir_path = "dbpedia"
 if not dir_path.endswith('/'):
     dir_path += '/'
     
@@ -30,7 +30,7 @@ def generate_sst2(dir_path, num_clients, num_classes, niid, balance, partition, 
     if check(config_path, train_path, test_path, num_clients, num_classes, niid, balance, partition, alpha, few_shot, n_shot, pfl):
         return
 
-    raw_datasets = load_dataset("glue", "sst2")
+    raw_datasets = load_dataset("glue", "dbpedia")
     checkpoint = "distilbert-base-uncased"
     tokenizer = AutoTokenizer.from_pretrained(checkpoint)
 

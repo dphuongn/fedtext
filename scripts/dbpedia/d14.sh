@@ -37,7 +37,7 @@ for lr in "${learning_rates[@]}"; do
                     nvidia-smi --query-gpu=compute_cap --format=csv >> $output_file && \
                     echo 'GPU details saved to $output_file' && \
                     time python main.py \
-                                -data sst2 \
+                                -data dbpedia14 \
                                 -algo flora \
                                 -gr 100 \
                                 -did 0 \

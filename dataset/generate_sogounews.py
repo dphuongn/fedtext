@@ -4,37 +4,24 @@ import sys
 import random
 import torch
 from datasets import load_dataset
-from transformers import DistilBertTokenizerFast
+from transformers import AutoTokenizer, DataCollatorWithPadding
+
 from utils.dataset_utils_new import check, process_dataset, separate_data, separate_data_pfl, split_data, save_file, separate_data_few_shot_iid, separate_data_few_shot_pat_non_iid
 
 random.seed(1)
 np.random.seed(1)
 
-dir_path = "agnews_hf"
+dir_path = "sogou_news"
 if not dir_path.endswith('/'):
     dir_path += '/'
-
-num_classes = 4  # AG News has 4 classes
-
-# Initialize the tokenizer
-tokenizer = DistilBertTokenizerFast.from_pretrained('distilbert-base-uncased')
-
-# Tokenize the datasets
-def tokenize_function(examples):
-    return tokenizer(examples['text'], padding="max_length", truncation=True)
-
-def process_tokenized_dataset(dataset):
-    dataset = dataset.map(tokenize_function, batched=True)
-    input_ids = np.array(dataset['input_ids'])
-    attention_masks = np.array(dataset['attention_mask'])
-    labels = np.array(dataset['label'])
-    return input_ids, attention_masks, labels
+    
+num_classes = 5
 
 # Allocate data to users
-def generate_agnews(dir_path, num_clients, num_classes, niid, balance, partition, alpha, few_shot, n_shot, pfl):
+def generate_ag_news(dir_path, num_clients, num_classes, niid, balance, partition, alpha, few_shot, n_shot, pfl):
     if not os.path.exists(dir_path):
         os.makedirs(dir_path)
-
+        
     # Setup directory for train/test data
     config_path = dir_path + "config.json"
     train_path = dir_path + "train/"
@@ -43,51 +30,65 @@ def generate_agnews(dir_path, num_clients, num_classes, niid, balance, partition
     if check(config_path, train_path, test_path, num_clients, num_classes, niid, balance, partition, alpha, few_shot, n_shot, pfl):
         return
 
-    trainset = load_dataset("fancyzhx/ag_news", split='train', cache_dir=dir_path+"rawdata")
-    testset = load_dataset("fancyzhx/ag_news", split='test', cache_dir=dir_path+"rawdata")
+    raw_datasets = load_dataset("community-datasets/sogou_news")
+    checkpoint = "distilbert-base-uncased"
+    tokenizer = AutoTokenizer.from_pretrained(checkpoint)
 
-    dataset_input_ids = []
-    dataset_attention_masks = []
-    dataset_labels = []
+    def tokenize_function(example):
+        return tokenizer(example["content"], truncation=True)
     
-    train_input_ids, train_attention_masks, train_labels = process_tokenized_dataset(trainset)
-    test_input_ids, test_attention_masks, test_labels = process_tokenized_dataset(testset)
+    tokenized_datasets = raw_datasets.map(tokenize_function, batched=True)
+    data_collator = DataCollatorWithPadding(tokenizer=tokenizer)
+    
+    tokenized_datasets = tokenized_datasets.remove_columns(["content", "title"])
+    tokenized_datasets = tokenized_datasets.rename_column("label", "labels")
+    tokenized_datasets.set_format("torch")
+    print(f'tokenized_datasets["train"].column_names: {tokenized_datasets["train"].column_names}')
+    
+    train_dataset = tokenized_datasets["train"]
+    test_dataset = tokenized_datasets["test"]
 
-    dataset_input_ids.extend(train_input_ids)
-    dataset_input_ids.extend(test_input_ids)
-    dataset_attention_masks.extend(train_attention_masks)
-    dataset_attention_masks.extend(test_attention_masks)
-    dataset_labels.extend(train_labels)
-    dataset_labels.extend(test_labels)
+    dataset_text = []
+    dataset_label = []
 
-    dataset_input_ids = np.array(dataset_input_ids)
-    dataset_attention_masks = np.array(dataset_attention_masks)
-    dataset_labels = np.array(dataset_labels)
+    train_texts = [x for x in train_dataset]
+    test_texts = [x for x in test_dataset]
 
+    dataset_text.extend(train_texts)
+    dataset_text.extend(test_texts)
+    dataset_text = np.array(dataset_text)
+    
     if pfl:
-        X, y, statistic = separate_data_pfl((dataset_input_ids, dataset_attention_masks, dataset_labels), num_clients, num_classes,  
+        X, _, statistic = separate_data_pfl((dataset_text,), num_clients, num_classes,  
                                     niid, balance, partition, alpha, class_per_client=4)
-
-        train_data, test_data = split_data(X, y)
-
-        for idx, test_dict in enumerate(train_data):
+        
+        train_data, test_data = split_data(X)
+        
+        for idx, train_dict in enumerate(train_data):
             print(f'train data: {idx}')
-            print(f'train data shape: {len(train_data[idx]["y"])}')
+            print(f'train data shape: {len(train_data[idx]["x"])}')
         for idx, test_dict in enumerate(test_data):
             print(f'test data: {idx}')
             print(f'test data shape: {len(test_dict["x"])}')
     
-    elif few_shot:
-        if not niid:
-            train_data, test_data, statistic, statistic_test = separate_data_few_shot_iid((dataset_input_ids, dataset_attention_masks, dataset_labels), 
+
+    elif few_shot:  # Add a parameter or a condition to trigger few-shot scenario
+        if not niid:  # iid
+            train_data, test_data, statistic, statistic_test = separate_data_few_shot_iid((dataset_text,), 
                                                         num_clients, num_classes, n_shot)
-        else:
-            train_data, test_data, statistic, statistic_test = separate_data_few_shot_pat_non_iid((dataset_input_ids, dataset_attention_masks, dataset_label), 
+        else:  # pat
+            train_data, test_data, statistic, statistic_test = separate_data_few_shot_pat_non_iid((dataset_text,), 
                                                         num_clients, num_classes, n_shot)
         
     else:
-        train_data, test_data, statistic, statistic_test = separate_data((dataset_input_ids, dataset_attention_masks, dataset_labels), num_clients, num_classes,  
+        train_data, test_data, statistic, statistic_test = separate_data((dataset_text,), num_clients, num_classes,  
                                     niid, balance, partition, alpha, class_per_client=4)
+        for idx, test_dict in enumerate(train_data):
+            print(f'train data: {idx}')
+            print(f'train data shape: {len(train_data[idx]["x"])}')
+        for idx, test_dict in enumerate(test_data):
+            print(f'test data: {idx}')
+            print(f'test data shape: {len(test_dict["x"])}')
         
     save_file(config_path, train_path, test_path, train_data, test_data, num_clients, num_classes, 
         statistic, niid, balance, partition, alpha, few_shot, n_shot, pfl)
@@ -155,4 +156,4 @@ if __name__ == "__main__":
     print(f"n_shot: {n_shot}")
     print(f"pfl: {pfl}")
 
-    generate_agnews(dir_path, num_clients, num_classes, niid, balance, partition, alpha, few_shot, n_shot, pfl)
+    generate_ag_news(dir_path, num_clients, num_classes, niid, balance, partition, alpha, few_shot, n_shot, pfl)

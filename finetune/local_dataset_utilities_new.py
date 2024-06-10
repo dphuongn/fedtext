@@ -23,7 +23,7 @@ def download_dataset():
 
 def load_dataset_into_dataframe(dataset):
     
-    if dataset == 'ag_news':
+    if dataset == 'ag':
         raw_datasets = load_dataset("fancyzhx/ag_news")
         df = pd.DataFrame(raw_datasets['train'])
     
@@ -45,7 +45,7 @@ def load_dataset_into_dataframe(dataset):
 def partition_dataset(df, dataset):
     df_shuffled = df.sample(frac=1, random_state=1).reset_index(drop=True)
 
-    if dataset == 'ag_news':
+    if dataset == 'ag':
         df_train = df_shuffled.iloc[:84_000]
         df_val = df_shuffled.iloc[84_000:96_000]
         df_test = df_shuffled.iloc[96_000:]
@@ -123,7 +123,7 @@ def tokenization_new(dataset):
     )
     tokenizer = AutoTokenizer.from_pretrained(checkpoint)
     
-    if dataset == 'ag_news':
+    if dataset == 'ag':
         def tokenize_text(batch):
             return tokenizer(batch["text"], truncation=True, padding=True)
         

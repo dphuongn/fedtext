@@ -11,7 +11,7 @@ from utils.dataset_utils_new import check, process_dataset, separate_data, separ
 random.seed(1)
 np.random.seed(1)
 
-dir_path = "ag_news"
+dir_path = "ag"
 if not dir_path.endswith('/'):
     dir_path += '/'
     

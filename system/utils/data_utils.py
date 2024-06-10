@@ -74,7 +74,7 @@ if __name__ == "__main__":
     device = "cuda" if torch.cuda.is_available() else "cpu"
     
     # Example usage to check train data for client 0
-    dataset = 'ag_news'  # replace with your dataset name
+    dataset = 'ag'  # replace with your dataset name
     train_data = read_data(dataset, idx=0, is_train=True)
     print("Type of train data:", type(train_data))  # Print the type of train data
     # print("Train data example:", train_data)  # Print the contents to check the structure
@@ -93,7 +93,7 @@ if __name__ == "__main__":
     
 #     # train_data = read_client_data_clip('digit5', 1, processor, class_names, device, is_train=True)
     
-#     dataset = 'ag_news'  # replace with your dataset name
+#     dataset = 'ag'  # replace with your dataset name
 #     train_data = read_data(dataset, idx=0, is_train=True)
 #     print("Train data example:", train_data[:1])  # Print the first element to check the structure
 

@@ -138,14 +138,14 @@ if __name__ == "__main__":
         
         results = 'aclImdb'
         
-    elif args.dataset == 'ag_news':
+    elif args.dataset == 'ag':
         df_train, df_val, df_test = get_dataset_new(args.dataset)
         new_tokenized = tokenization_new(args.dataset)
         train_loader, val_loader, test_loader = setup_dataloaders_new(new_tokenized)
     
         num_labels = 4
         
-        results = 'ag_news'
+        results = 'ag'
         
     elif args.dataset == 'sogou_news':
         

@@ -1,8 +1,14 @@
 def get_num_labels(dataset_name):
     num_labels = {
-        "ag_news": 4,
+        "ag": 4,
+
+        "sogou_news": 5,
         
-        "sst2": 2,
+        "dbpedia": 2,
+
+        "cola": 2,
+
+        "dbpedia_14": 14,
         
     }
     

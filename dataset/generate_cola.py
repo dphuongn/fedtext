@@ -11,14 +11,14 @@ from utils.dataset_utils_new import check, process_dataset, separate_data, separ
 random.seed(1)
 np.random.seed(1)
 
-dir_path = "sogou_news"
+dir_path = "cola"
 if not dir_path.endswith('/'):
     dir_path += '/'
     
-num_classes = 5
+num_classes = 2
 
 # Allocate data to users
-def generate_ag_news(dir_path, num_clients, num_classes, niid, balance, partition, alpha, few_shot, n_shot, pfl):
+def generate_sst2(dir_path, num_clients, num_classes, niid, balance, partition, alpha, few_shot, n_shot, pfl):
     if not os.path.exists(dir_path):
         os.makedirs(dir_path)
         
@@ -30,32 +30,35 @@ def generate_ag_news(dir_path, num_clients, num_classes, niid, balance, partitio
     if check(config_path, train_path, test_path, num_clients, num_classes, niid, balance, partition, alpha, few_shot, n_shot, pfl):
         return
 
-    raw_datasets = load_dataset("community-datasets/sogou_news")
+    raw_datasets = load_dataset("glue", "cola")
     checkpoint = "distilbert-base-uncased"
     tokenizer = AutoTokenizer.from_pretrained(checkpoint)
 
     def tokenize_function(example):
-        return tokenizer(example["content"], truncation=True)
+        return tokenizer(example["sentence"], truncation=True)
     
     tokenized_datasets = raw_datasets.map(tokenize_function, batched=True)
     data_collator = DataCollatorWithPadding(tokenizer=tokenizer)
     
-    tokenized_datasets = tokenized_datasets.remove_columns(["content", "title"])
+    tokenized_datasets = tokenized_datasets.remove_columns(["sentence", "idx"])
     tokenized_datasets = tokenized_datasets.rename_column("label", "labels")
     tokenized_datasets.set_format("torch")
     print(f'tokenized_datasets["train"].column_names: {tokenized_datasets["train"].column_names}')
     
     train_dataset = tokenized_datasets["train"]
-    test_dataset = tokenized_datasets["test"]
+    validation_dataset = tokenized_datasets["validation"]
+    # test_dataset = tokenized_datasets["test"]
 
     dataset_text = []
     dataset_label = []
 
     train_texts = [x for x in train_dataset]
-    test_texts = [x for x in test_dataset]
+    validation_texts = [x for x in validation_dataset]
+    # test_texts = [x for x in test_dataset]
 
     dataset_text.extend(train_texts)
-    dataset_text.extend(test_texts)
+    dataset_text.extend(validation_texts)
+    # dataset_text.extend(test_texts)
     dataset_text = np.array(dataset_text)
     
     if pfl:
@@ -156,4 +159,4 @@ if __name__ == "__main__":
     print(f"n_shot: {n_shot}")
     print(f"pfl: {pfl}")
 
-    generate_ag_news(dir_path, num_clients, num_classes, niid, balance, partition, alpha, few_shot, n_shot, pfl)
+    generate_sst2(dir_path, num_clients, num_classes, niid, balance, partition, alpha, few_shot, n_shot, pfl)
