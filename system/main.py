@@ -354,7 +354,7 @@ if __name__ == "__main__":
     args.lora_params = {
         'rank': args.lora_rank,
         'alpha': args.lora_alpha,
-        'lora_dropout': args.lora_dropout,
+        'dropout': args.lora_dropout,
         'lora_query': args.lora_query,
         'lora_key': args.lora_key,
         'lora_value': args.lora_value,
