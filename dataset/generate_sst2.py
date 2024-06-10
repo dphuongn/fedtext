@@ -8,10 +8,10 @@ from transformers import AutoTokenizer, DataCollatorWithPadding
 
 from utils.dataset_utils_new import check, process_dataset, separate_data, separate_data_pfl, split_data, save_file, separate_data_few_shot_iid, separate_data_few_shot_pat_non_iid
 
-random.seed(1)
-np.random.seed(1)
+random.seed(0)
+np.random.seed(0)
 
-dir_path = "dbpedia"
+dir_path = "sst2"
 if not dir_path.endswith('/'):
     dir_path += '/'
     
@@ -30,7 +30,7 @@ def generate_sst2(dir_path, num_clients, num_classes, niid, balance, partition, 
     if check(config_path, train_path, test_path, num_clients, num_classes, niid, balance, partition, alpha, few_shot, n_shot, pfl):
         return
 
-    raw_datasets = load_dataset("glue", "dbpedia")
+    raw_datasets = load_dataset("glue", "sst2")
     checkpoint = "distilbert-base-uncased"
     tokenizer = AutoTokenizer.from_pretrained(checkpoint)
 
@@ -40,25 +40,25 @@ def generate_sst2(dir_path, num_clients, num_classes, niid, balance, partition, 
     tokenized_datasets = raw_datasets.map(tokenize_function, batched=True)
     data_collator = DataCollatorWithPadding(tokenizer=tokenizer)
     
-    tokenized_datasets = tokenized_datasets.remove_columns(["sentence", "idx", "token_type_ids"])
+    tokenized_datasets = tokenized_datasets.remove_columns(["sentence", "idx"])
     tokenized_datasets = tokenized_datasets.rename_column("label", "labels")
     tokenized_datasets.set_format("torch")
     print(f'tokenized_datasets["train"].column_names: {tokenized_datasets["train"].column_names}')
     
     train_dataset = tokenized_datasets["train"]
     validation_dataset = tokenized_datasets["validation"]
-    test_dataset = tokenized_datasets["test"]
+    # test_dataset = tokenized_datasets["test"]
 
     dataset_text = []
     dataset_label = []
 
     train_texts = [x for x in train_dataset]
     validation_texts = [x for x in validation_dataset]
-    test_texts = [x for x in test_dataset]
+    # test_texts = [x for x in test_dataset]
 
     dataset_text.extend(train_texts)
     dataset_text.extend(validation_texts)
-    dataset_text.extend(test_texts)
+    # dataset_text.extend(test_texts)
     dataset_text = np.array(dataset_text)
     
     if pfl:

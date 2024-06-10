@@ -11,14 +11,14 @@ from utils.dataset_utils_new import check, process_dataset, separate_data, separ
 random.seed(1)
 np.random.seed(1)
 
-dir_path = "dbpedia14"
+dir_path = "dbpedia_14"
 if not dir_path.endswith('/'):
     dir_path += '/'
     
 num_classes = 14
 
 # Allocate data to users
-def generate_dbpedia14(dir_path, num_clients, num_classes, niid, balance, partition, alpha, few_shot, n_shot, pfl):
+def generate_dbpedia_14(dir_path, num_clients, num_classes, niid, balance, partition, alpha, few_shot, n_shot, pfl):
     if not os.path.exists(dir_path):
         os.makedirs(dir_path)
         
@@ -168,4 +168,4 @@ if __name__ == "__main__":
     print(f"n_shot: {n_shot}")
     print(f"pfl: {pfl}")
 
-    generate_dbpedia14(dir_path, num_clients, num_classes, niid, balance, partition, alpha, few_shot, n_shot, pfl)
+    generate_dbpedia_14(dir_path, num_clients, num_classes, niid, balance, partition, alpha, few_shot, n_shot, pfl)

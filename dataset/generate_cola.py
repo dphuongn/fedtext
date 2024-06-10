@@ -18,7 +18,7 @@ if not dir_path.endswith('/'):
 num_classes = 2
 
 # Allocate data to users
-def generate_sst2(dir_path, num_clients, num_classes, niid, balance, partition, alpha, few_shot, n_shot, pfl):
+def generate_cola(dir_path, num_clients, num_classes, niid, balance, partition, alpha, few_shot, n_shot, pfl):
     if not os.path.exists(dir_path):
         os.makedirs(dir_path)
         
@@ -159,4 +159,4 @@ if __name__ == "__main__":
     print(f"n_shot: {n_shot}")
     print(f"pfl: {pfl}")
 
-    generate_sst2(dir_path, num_clients, num_classes, niid, balance, partition, alpha, few_shot, n_shot, pfl)
+    generate_cola(dir_path, num_clients, num_classes, niid, balance, partition, alpha, few_shot, n_shot, pfl)
