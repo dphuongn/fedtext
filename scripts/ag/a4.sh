@@ -15,7 +15,7 @@ echo "$PWD"
 #echo "Started batch job at $(date)"
 
 # Learning rates to grid search over
-learning_rates=(1e-3 5e-3 1e-4 5e-4 1e-5 1e-6 5e-6 1e-7 5e-7 1e-8)
+learning_rates=(1e-4 5e-4 1e-5 5e-5 1e-6 5e-6 1e-7 5e-7)
 rank_values=(1 2 4 8 16 32)
 alpha_values=(1 4 8 16 32 64)
 dropout_values=(0 0.05 0.1)
@@ -26,7 +26,7 @@ for lr in "${learning_rates[@]}"; do
         for alpha in "${alpha_values[@]}"; do
             for dropout in "${dropout_values[@]}"; do
                 # Dynamically generate job name and log file names based on algorithm and learning rate
-                job_name="ag_dir_flora_lr${lr}_rank${rank}_alpha${alpha}_dropout${dropout}"
+                job_name="a4_dir_flora_lr${lr}_rank${rank}_alpha${alpha}_dropout${dropout}"
                 output_file="${log_dir}/${job_name}.out"
                 error_file="${log_dir}/${job_name}.err"
 

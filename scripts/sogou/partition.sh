@@ -1,4 +1,4 @@
 
 cd dataset/
 
-python generate_sogounew.py 10 noniid - dir 0.1 - - pfl
+python generate_sogounews.py 10 noniid - dir 1.0 - - pfl
