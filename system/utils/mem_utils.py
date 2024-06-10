@@ -194,6 +194,7 @@ class MemReporter():
             ))
 
             if device != torch.device('cpu'):
+                print(device)
                 with torch.cuda.device(device):
                     memory_allocated = torch.cuda.memory_allocated()
                 print('The allocated memory on {}: {}'.format(
@@ -217,4 +218,5 @@ class MemReporter():
         """
         self.collect_tensor()
         self.get_stats()
+        print(device)
         self.print_stats(verbose, target_device=device)

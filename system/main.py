@@ -179,7 +179,7 @@ def run(args):
 
     print("All done!")
 
-    reporter.report()
+    # reporter.report()
 
 
 if __name__ == "__main__":
