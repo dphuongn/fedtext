@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the directory where you want to store output and error files
-log_dir="/export/work/yusx/phuong/FLoRA/logs/sst2"
+log_dir="/export/work/yusx/phuong/FLoRA/logs/d14"
 
 # Create the directory if it doesn't exist
 mkdir -p $log_dir
@@ -24,7 +24,7 @@ for lr in "${learning_rates[@]}"; do
         for alpha in "${alpha_values[@]}"; do
             for dropout in "${dropout_values[@]}"; do
                 # Dynamically generate job name and log file names based on algorithm and learning rate
-                job_name="sst2_dir_flora_lr${lr}_rank${rank}_alpha${alpha}_dropout${dropout}"
+                job_name="d14_dir_flora_lr${lr}_rank${rank}_alpha${alpha}_dropout${dropout}"
                 output_file="${log_dir}/${job_name}.out"
                 error_file="${log_dir}/${job_name}.err"
 
@@ -37,7 +37,7 @@ for lr in "${learning_rates[@]}"; do
                     nvidia-smi --query-gpu=compute_cap --format=csv >> $output_file && \
                     echo 'GPU details saved to $output_file' && \
                     time python main.py \
-                                -data dbpedia14 \
+                                -data dbpedia_14 \
                                 -algo flora \
                                 -gr 100 \
                                 -did 0 \
