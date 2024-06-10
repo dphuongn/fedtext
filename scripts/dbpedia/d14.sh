@@ -24,7 +24,7 @@ for lr in "${learning_rates[@]}"; do
         for alpha in "${alpha_values[@]}"; do
             for dropout in "${dropout_values[@]}"; do
                 # Dynamically generate job name and log file names based on algorithm and learning rate
-                job_name="d14_dir_flora_lr${lr}_rank${rank}_alpha${alpha}_dropout${dropout}"
+                job_name="d14_dir10_flora_lr${lr}_rank${rank}_alpha${alpha}_dropout${dropout}"
                 output_file="${log_dir}/${job_name}.out"
                 error_file="${log_dir}/${job_name}.err"
 
