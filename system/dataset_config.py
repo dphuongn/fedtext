@@ -7,6 +7,8 @@ def get_num_labels(dataset_name):
         "cola": 2,
 
         "dbpedia_14": 14,
+
+        "sst2": 2,
         
     }
     
