@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Define the directory where you want to store output and error files
-log_dir="/home/jpmunoz/AutoML/Phuong/fedtext/logs/s5"
+log_dir="/home/jpmunoz/AutoML/Phuong/fedtext/logs/y5"
+
 # Create the directory if it doesn't exist
 mkdir -p $log_dir
 
@@ -25,7 +26,7 @@ for lr in "${learning_rates[@]}"; do
         for alpha in "${alpha_values[@]}"; do
             for dropout in "${dropout_values[@]}"; do
                 # Dynamically generate job name and log file names based on algorithm and learning rate
-                job_name="s5_dir10_flora_lr${lr}_rank${rank}_alpha${alpha}_dropout${dropout}"
+                job_name="y5_dir_flora_lr${lr}_rank${rank}_alpha${alpha}_dropout${dropout}"
                 output_file="${log_dir}/${job_name}.out"
                 error_file="${log_dir}/${job_name}.err"
 
@@ -37,13 +38,13 @@ for lr in "${learning_rates[@]}"; do
                     nvidia-smi -L > $output_file && \
                     nvidia-smi --query-gpu=compute_cap --format=csv >> $output_file && \
                     echo 'GPU details saved to $output_file' && \
-                    time CUDA_VISIBLE_DEVICES=2 python main.py \
-                                -data sogou_news \
+                    time CUDA_VISIBLE_DEVICES=3 python main.py \
+                                -data yelp_preview_full \
                                 -algo flora \
                                 -gr 100 \
-                                -did 2 \
+                                -did 3 \
                                 -nc 10 \
-                                -lbs 64 \
+                                -lbs 128 \
                                 -lr ${lr} \
                                 -sd 42 \
                                 --lora_rank ${rank} \
@@ -56,7 +57,7 @@ for lr in "${learning_rates[@]}"; do
                                 --lora_mlp \
                                 --lora_head \
                                 -pfl
-                ) > $output_file 2> $error_file 
+                ) > $output_file 2> $error_file
 
                 echo "Started job $job_name with algo=flora, learning_rate=${lr}, lora_rank=${rank}, lora_alpha=${alpha}, and lora_dropout=${dropout} at $(date)"
             done
