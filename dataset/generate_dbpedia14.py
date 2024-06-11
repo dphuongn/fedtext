@@ -45,11 +45,11 @@ def generate_dbpedia_14(dir_path, num_clients, num_classes, niid, balance, parti
     tokenized_test_dataset = raw_test_dataset.map(tokenize_function, batched=True)
     data_collator = DataCollatorWithPadding(tokenizer=tokenizer)
 
-    tokenized_train_dataset = tokenized_train_dataset.remove_columns(["content"])
+    tokenized_train_dataset = tokenized_train_dataset.remove_columns(["content", "title"])
     tokenized_train_dataset = tokenized_train_dataset.rename_column("label", "labels")
     tokenized_train_dataset.set_format("torch")
 
-    tokenized_test_dataset = tokenized_test_dataset.remove_columns(["content"])
+    tokenized_test_dataset = tokenized_test_dataset.remove_columns(["content", "title"])
     tokenized_test_dataset = tokenized_test_dataset.rename_column("label", "labels")
     tokenized_test_dataset.set_format("torch")
 
