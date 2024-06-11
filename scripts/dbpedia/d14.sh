@@ -43,7 +43,7 @@ for lr in "${learning_rates[@]}"; do
                                 -gr 100 \
                                 -did 2 \
                                 -nc 10 \
-                                -lbs 128 \
+                                -lbs 64 \
                                 -lr ${lr} \
                                 -sd 42 \
                                 --lora_rank ${rank} \
