@@ -187,6 +187,12 @@ if __name__ == "__main__":
     device = "cuda" if torch.cuda.is_available() else "cpu"
 
     if device == "cuda":
+        print('__TORCH Version:', torch.__version__)
+        print('__CUDNN Version:', torch.backends.cudnn.version())
+        print("__CUDA version: ", torch.version.cuda)
+        print('__Number CUDA Devices:', torch.cuda.device_count())
+        print('__CUDA Device Name:', torch.cuda.get_device_name(0))
+        print('__CUDA Device Total Memory [GB]:', torch.cuda.get_device_properties(0).total_memory/1e9)
         print('__CUDA Device Total Memory [GB]:', torch.cuda.get_device_properties(0).total_memory/1e9)
         
         
