@@ -11,14 +11,14 @@ from utils.dataset_utils_new import check, process_dataset, separate_data, separ
 random.seed(1)
 np.random.seed(1)
 
-dir_path = "dbpedia_14"
+dir_path = "yelp_preview_full"
 if not dir_path.endswith('/'):
     dir_path += '/'
     
-num_classes = 14
+num_classes = 5
 
 # Allocate data to users
-def generate_dbpedia_14(dir_path, num_clients, num_classes, niid, balance, partition, alpha, few_shot, n_shot, pfl):
+def generate_yelp_review_full(dir_path, num_clients, num_classes, niid, balance, partition, alpha, few_shot, n_shot, pfl):
     if not os.path.exists(dir_path):
         os.makedirs(dir_path)
         
@@ -32,24 +32,24 @@ def generate_dbpedia_14(dir_path, num_clients, num_classes, niid, balance, parti
 
     # raw_datasets = load_dataset("fancyzhx/dbpedia_14")
     
-    raw_train_dataset = load_dataset("fancyzhx/dbpedia_14", split="train")
-    raw_test_dataset = load_dataset("fancyzhx/dbpedia_14", split="test")
+    raw_train_dataset = load_dataset("Yelp/yelp_review_full", split="train")
+    raw_test_dataset = load_dataset("Yelp/yelp_review_full", split="test")
     
     checkpoint = "distilbert-base-uncased"
     tokenizer = AutoTokenizer.from_pretrained(checkpoint)
 
     def tokenize_function(example):
-        return tokenizer(example["content"], truncation=True)
+        return tokenizer(example["text"], truncation=True)
 
     tokenized_train_dataset = raw_train_dataset.map(tokenize_function, batched=True)
     tokenized_test_dataset = raw_test_dataset.map(tokenize_function, batched=True)
     data_collator = DataCollatorWithPadding(tokenizer=tokenizer)
 
-    tokenized_train_dataset = tokenized_train_dataset.remove_columns(["content", "title"])
+    tokenized_train_dataset = tokenized_train_dataset.remove_columns(["text"])
     tokenized_train_dataset = tokenized_train_dataset.rename_column("label", "labels")
     tokenized_train_dataset.set_format("torch")
 
-    tokenized_test_dataset = tokenized_test_dataset.remove_columns(["content", "title"])
+    tokenized_test_dataset = tokenized_test_dataset.remove_columns(["text"])
     tokenized_test_dataset = tokenized_test_dataset.rename_column("label", "labels")
     tokenized_test_dataset.set_format("torch")
 
@@ -168,4 +168,4 @@ if __name__ == "__main__":
     print(f"n_shot: {n_shot}")
     print(f"pfl: {pfl}")
 
-    generate_dbpedia_14(dir_path, num_clients, num_classes, niid, balance, partition, alpha, few_shot, n_shot, pfl)
+    generate_yelp_review_full(dir_path, num_clients, num_classes, niid, balance, partition, alpha, few_shot, n_shot, pfl)
