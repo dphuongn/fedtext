@@ -72,12 +72,12 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
   File "/home/jpmunoz/AutoML/Phuong/fedtext_env/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
     return forward_call(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/jpmunoz/AutoML/Phuong/fedtext_env/lib/python3.11/site-packages/transformers/models/distilbert/modeling_distilbert.py", line 230, in forward
-    scores = scores.masked_fill(
-             ^^^^^^^^^^^^^^^^^^^
-torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.50 GiB. GPU 
-  0%|          | 0/349 [00:01<?, ?it/s]
+  File "/home/jpmunoz/AutoML/Phuong/fedtext_env/lib/python3.11/site-packages/transformers/models/distilbert/modeling_distilbert.py", line 241, in forward
+    context = torch.matmul(weights, v)  # (bs, n_heads, q_length, dim_per_head)
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 192.00 MiB. GPU 
+  0%|          | 0/349 [00:00<?, ?it/s]
 
-real	12m20.575s
-user	32m31.241s
-sys	0m24.935s
+real	12m24.413s
+user	32m57.019s
+sys	0m51.754s
