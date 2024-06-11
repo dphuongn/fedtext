@@ -14,7 +14,9 @@ echo "$PWD"
 #echo "Started batch job at $(date)"
 
 # Learning rates to grid search over
-learning_rates=(1e-4 5e-4 1e-5 5e-5 1e-6 5e-6 1e-7 5e-7)
+# Partially complete 1e-4 
+# Removed 1e-7 5e-7
+learning_rates=(5e-4 1e-5 5e-5 1e-6 5e-6)
 rank_values=(1 2 4 8 16 32)
 alpha_values=(1 4 8 16 32 64)
 dropout_values=(0 0.05 0.1)
@@ -40,7 +42,7 @@ for lr in "${learning_rates[@]}"; do
                     time CUDA_VISIBLE_DEVICES=1 python main.py \
                                 -data cola \
                                 -algo flora \
-                                -gr 100 \
+                                -gr 50 \
                                 -did 1 \
                                 -nc 10 \
                                 -lbs 128 \
