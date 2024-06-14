@@ -41,7 +41,7 @@ for lr in "${learning_rates[@]}"; do
                     time CUDA_VISIBLE_DEVICES=3 python main.py \
                                 -data yelp_preview_full \
                                 -algo flora \
-                                -gr 100 \
+                                -gr 50 \
                                 -did 3 \
                                 -nc 10 \
                                 -lbs 64 \
