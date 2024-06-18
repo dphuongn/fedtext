@@ -34,6 +34,8 @@ from flcore.trainmodel.distilbert_model import *
 
 from transformers import AutoTokenizer, DataCollatorWithPadding, get_scheduler
 
+import evaluate
+
 checkpoint = "distilbert-base-uncased"
 tokenizer = AutoTokenizer.from_pretrained(checkpoint)
 
