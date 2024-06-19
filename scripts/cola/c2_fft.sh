@@ -24,7 +24,7 @@ for lr in "${learning_rates[@]}"; do
     error_file="${log_dir}/${job_name}.err"
 
     echo "$PWD"
-    echo "Running with algo=flora, learning_rate=${lr}"
+    echo "Running with algo=fedfft, learning_rate=${lr}"
 
     # Run the job directly
     (
