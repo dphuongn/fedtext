@@ -19,7 +19,7 @@ learning_rates=(1e-3 5e-3 1e-4 5e-4 1e-5 5e-5 1e-6 5e-6 1e-7 5e-7 1e-8 5e-8)
 # Iterate over learning rates, rank values, alpha values, and dropout values
 for lr in "${learning_rates[@]}"; do
     # Dynamically generate job name and log file names based on algorithm and learning rate
-    job_name="c2_dir10_fft_lr${lr}_dropout${dropout}"
+    job_name="c2_dir10_fft_lr${lr}"
     output_file="${log_dir}/${job_name}.out"
     error_file="${log_dir}/${job_name}.err"
 
