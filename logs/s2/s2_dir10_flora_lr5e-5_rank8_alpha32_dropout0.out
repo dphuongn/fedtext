@@ -1,0 +1,4865 @@
+GPU details saved to $output_file
+__TORCH Version: 2.3.1+cu121
+__CUDNN Version: 8902
+__CUDA version:  12.1
+__Number CUDA Devices: 1
+__CUDA Device Name: NVIDIA A100-SXM4-40GB
+__CUDA Device Total Memory [GB]: 42.297786368
+args.dataset: sst2
+args.num_labels: 2
+==================================================
+Personalized Federated Learning: True
+Uniform Weight: False
+Normalized Rank: False
+Normalized Alpha: False
+lora_rank: 8
+lora_alpha: 32
+lora_dropout: 0.0
+lora_query: True
+lora_key: True
+lora_value: True
+lora_projection: True
+lora_mlp: True
+lora_head: True
+aa_bottleneck_reduction: 1
+aa_text: False
+aa_vision: False
+ca_bottleneck_reduction: 4
+ca_text: False
+ca_vision: False
+Seed: 42
+Algorithm: flora
+Local batch size: 128
+Local epochs: 1
+Local learing rate: 5e-05
+Local learing rate decay: False
+Total number of clients: 10
+Clients join in each round: 1.0
+Clients randomly join: False
+Client drop rate: 0.0
+Client select regarding time: False
+Running times: 1
+Dataset: sst2
+Number of classes: 10
+Backbone: distilbert
+Using device: cuda
+Using DP: False
+Auto break: False
+Global rounds: 50
+Cuda device id: 3
+DLG attack: False
+Total number of new clients: 0
+Fine tuning epoches on new clients: 0
+==================================================
+
+============= Running time: 0th =============
+Creating server and clients ...
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+self.lora_params: {'rank': 8, 'alpha': 32, 'dropout': 0.0, 'lora_query': True, 'lora_key': True, 'lora_value': True, 'lora_projection': True, 'lora_mlp': True, 'lora_head': True}
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+self.lora_params: {'rank': 8, 'alpha': 32, 'dropout': 0.0, 'lora_query': True, 'lora_key': True, 'lora_value': True, 'lora_projection': True, 'lora_mlp': True, 'lora_head': True}
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+self.lora_params: {'rank': 8, 'alpha': 32, 'dropout': 0.0, 'lora_query': True, 'lora_key': True, 'lora_value': True, 'lora_projection': True, 'lora_mlp': True, 'lora_head': True}
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+self.lora_params: {'rank': 8, 'alpha': 32, 'dropout': 0.0, 'lora_query': True, 'lora_key': True, 'lora_value': True, 'lora_projection': True, 'lora_mlp': True, 'lora_head': True}
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+self.lora_params: {'rank': 8, 'alpha': 32, 'dropout': 0.0, 'lora_query': True, 'lora_key': True, 'lora_value': True, 'lora_projection': True, 'lora_mlp': True, 'lora_head': True}
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+self.lora_params: {'rank': 8, 'alpha': 32, 'dropout': 0.0, 'lora_query': True, 'lora_key': True, 'lora_value': True, 'lora_projection': True, 'lora_mlp': True, 'lora_head': True}
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+self.lora_params: {'rank': 8, 'alpha': 32, 'dropout': 0.0, 'lora_query': True, 'lora_key': True, 'lora_value': True, 'lora_projection': True, 'lora_mlp': True, 'lora_head': True}
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+self.lora_params: {'rank': 8, 'alpha': 32, 'dropout': 0.0, 'lora_query': True, 'lora_key': True, 'lora_value': True, 'lora_projection': True, 'lora_mlp': True, 'lora_head': True}
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+self.lora_params: {'rank': 8, 'alpha': 32, 'dropout': 0.0, 'lora_query': True, 'lora_key': True, 'lora_value': True, 'lora_projection': True, 'lora_mlp': True, 'lora_head': True}
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+self.lora_params: {'rank': 8, 'alpha': 32, 'dropout': 0.0, 'lora_query': True, 'lora_key': True, 'lora_value': True, 'lora_projection': True, 'lora_mlp': True, 'lora_head': True}
+
+Join ratio / total clients: 1.0 / 10
+Finished creating server and clients.
+
+-------------Round number: 0-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.5545774647887324}
+ct, ns, auc: 0.5545774647887324, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.528165086447295}
+ct, ns, auc: 0.528165086447295, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.46889226100151743}
+ct, ns, auc: 0.46889226100151743, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.5435943060498221}
+ct, ns, auc: 0.5435943060498221, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.5756035578144854}
+ct, ns, auc: 0.5756035578144854, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.5479082321187584}
+ct, ns, auc: 0.5479082321187584, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.44282238442822386}
+ct, ns, auc: 0.44282238442822386, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.555765595463138}
+ct, ns, auc: 0.555765595463138, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.5232459847844463}
+ct, ns, auc: 0.5232459847844463, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.4804630969609262}
+ct, ns, auc: 0.4804630969609262, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.5545774647887324, 0.528165086447295, 0.46889226100151743, 0.5435943060498221, 0.5756035578144854, 0.5479082321187584, 0.44282238442822386, 0.555765595463138, 0.5232459847844463, 0.4804630969609262]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.5221
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.0435
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.30 GB
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.31 GB
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.32 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.32 GB
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.33 GB
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.33 GB
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.34 GB
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.34 GB
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.35 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.36 GB
+------------------------- time cost ------------------------- 65.83653569221497
+
+-------------Round number: 1-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.8054577464788732}
+ct, ns, auc: 0.8054577464788732, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.5705521472392638}
+ct, ns, auc: 0.5705521472392638, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.503793626707132}
+ct, ns, auc: 0.503793626707132, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.7962633451957295}
+ct, ns, auc: 0.7962633451957295, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.2630241423125794}
+ct, ns, auc: 0.2630241423125794, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.6558704453441295}
+ct, ns, auc: 0.6558704453441295, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.45012165450121655}
+ct, ns, auc: 0.45012165450121655, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.779773156899811}
+ct, ns, auc: 0.779773156899811, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.8472104818258664}
+ct, ns, auc: 0.8472104818258664, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.6468885672937771}
+ct, ns, auc: 0.6468885672937771, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.8054577464788732, 0.5705521472392638, 0.503793626707132, 0.7962633451957295, 0.2630241423125794, 0.6558704453441295, 0.45012165450121655, 0.779773156899811, 0.8472104818258664, 0.6468885672937771]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.6319
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.1872
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.36 GB
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.36 GB
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.36 GB
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.36 GB
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.36 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.36 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.36 GB
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.36 GB
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.36 GB
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.36 GB
+------------------------- time cost ------------------------- 64.1471962928772
+
+-------------Round number: 2-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.8882042253521126}
+ct, ns, auc: 0.8882042253521126, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.8817624093697713}
+ct, ns, auc: 0.8817624093697713, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.8619119878603946}
+ct, ns, auc: 0.8619119878603946, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.8674377224199288}
+ct, ns, auc: 0.8674377224199288, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.17534942820838628}
+ct, ns, auc: 0.17534942820838628, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.8947368421052632}
+ct, ns, auc: 0.8947368421052632, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.5048661800486618}
+ct, ns, auc: 0.5048661800486618, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.8976055450535602}
+ct, ns, auc: 0.8976055450535602, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.8901098901098901}
+ct, ns, auc: 0.8901098901098901, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.3386396526772793}
+ct, ns, auc: 0.3386396526772793, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.8882042253521126, 0.8817624093697713, 0.8619119878603946, 0.8674377224199288, 0.17534942820838628, 0.8947368421052632, 0.5048661800486618, 0.8976055450535602, 0.8901098901098901, 0.3386396526772793]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.7201
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.2740
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.36 GB
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.36 GB
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.36 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.36 GB
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.36 GB
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.36 GB
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 68.60756850242615
+
+-------------Round number: 3-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9198943661971831}
+ct, ns, auc: 0.9198943661971831, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9012827663134412}
+ct, ns, auc: 0.9012827663134412, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.8877086494688923}
+ct, ns, auc: 0.8877086494688923, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.8754448398576512}
+ct, ns, auc: 0.8754448398576512, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.36086404066073696}
+ct, ns, auc: 0.36086404066073696, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.8893387314439946}
+ct, ns, auc: 0.8893387314439946, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.572992700729927}
+ct, ns, auc: 0.572992700729927, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9108380592312539}
+ct, ns, auc: 0.9108380592312539, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9072273879966187}
+ct, ns, auc: 0.9072273879966187, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.7930535455861071}
+ct, ns, auc: 0.7930535455861071, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.9198943661971831, 0.9012827663134412, 0.8877086494688923, 0.8754448398576512, 0.36086404066073696, 0.8893387314439946, 0.572992700729927, 0.9108380592312539, 0.9072273879966187, 0.7930535455861071]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.8019
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.1868
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 63.941229820251465
+
+-------------Round number: 4-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9278169014084507}
+ct, ns, auc: 0.9278169014084507, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9191299498047965}
+ct, ns, auc: 0.9191299498047965, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.91350531107739}
+ct, ns, auc: 0.91350531107739, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.891459074733096}
+ct, ns, auc: 0.891459074733096, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.4764930114358323}
+ct, ns, auc: 0.4764930114358323, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9244264507422402}
+ct, ns, auc: 0.9244264507422402, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.7883211678832117}
+ct, ns, auc: 0.7883211678832117, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9215500945179584}
+ct, ns, auc: 0.9215500945179584, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9148351648351648}
+ct, ns, auc: 0.9148351648351648, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.8755426917510853}
+ct, ns, auc: 0.8755426917510853, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.9278169014084507, 0.9191299498047965, 0.91350531107739, 0.891459074733096, 0.4764930114358323, 0.9244264507422402, 0.7883211678832117, 0.9215500945179584, 0.9148351648351648, 0.8755426917510853]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.8553
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.1395
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 64.37785315513611
+
+-------------Round number: 5-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9375}
+ct, ns, auc: 0.9375, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9235917456776352}
+ct, ns, auc: 0.9235917456776352, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9241274658573596}
+ct, ns, auc: 0.9241274658573596, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.896797153024911}
+ct, ns, auc: 0.896797153024911, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.4434561626429479}
+ct, ns, auc: 0.4434561626429479, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9284750337381916}
+ct, ns, auc: 0.9284750337381916, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.916058394160584}
+ct, ns, auc: 0.916058394160584, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9215500945179584}
+ct, ns, auc: 0.9215500945179584, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9215976331360947}
+ct, ns, auc: 0.9215976331360947, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9001447178002895}
+ct, ns, auc: 0.9001447178002895, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.9375, 0.9235917456776352, 0.9241274658573596, 0.896797153024911, 0.4434561626429479, 0.9284750337381916, 0.916058394160584, 0.9215500945179584, 0.9215976331360947, 0.9001447178002895]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.8713
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.1508
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 64.56367230415344
+
+-------------Round number: 6-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9401408450704225}
+ct, ns, auc: 0.9401408450704225, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9308421639709983}
+ct, ns, auc: 0.9308421639709983, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9271623672230652}
+ct, ns, auc: 0.9271623672230652, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.902135231316726}
+ct, ns, auc: 0.902135231316726, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.7191867852604829}
+ct, ns, auc: 0.7191867852604829, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9304993252361673}
+ct, ns, auc: 0.9304993252361673, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9343065693430657}
+ct, ns, auc: 0.9343065693430657, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.928481411468179}
+ct, ns, auc: 0.928481411468179, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9279374471682164}
+ct, ns, auc: 0.9279374471682164, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9073806078147613}
+ct, ns, auc: 0.9073806078147613, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.9401408450704225, 0.9308421639709983, 0.9271623672230652, 0.902135231316726, 0.7191867852604829, 0.9304993252361673, 0.9343065693430657, 0.928481411468179, 0.9279374471682164, 0.9073806078147613]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.9048
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.0663
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 69.08381724357605
+
+-------------Round number: 7-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9392605633802817}
+ct, ns, auc: 0.9392605633802817, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9302844394868934}
+ct, ns, auc: 0.9302844394868934, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9241274658573596}
+ct, ns, auc: 0.9241274658573596, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9110320284697508}
+ct, ns, auc: 0.9110320284697508, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9161372299872935}
+ct, ns, auc: 0.9161372299872935, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9358974358974359}
+ct, ns, auc: 0.9358974358974359, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9318734793187348}
+ct, ns, auc: 0.9318734793187348, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9300567107750473}
+ct, ns, auc: 0.9300567107750473, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9285714285714286}
+ct, ns, auc: 0.9285714285714286, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9073806078147613}
+ct, ns, auc: 0.9073806078147613, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.9392605633802817, 0.9302844394868934, 0.9241274658573596, 0.9110320284697508, 0.9161372299872935, 0.9358974358974359, 0.9318734793187348, 0.9300567107750473, 0.9285714285714286, 0.9073806078147613]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.9255
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.0106
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 64.06541585922241
+
+-------------Round number: 8-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9383802816901409}
+ct, ns, auc: 0.9383802816901409, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9353039598438372}
+ct, ns, auc: 0.9353039598438372, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.93247344461305}
+ct, ns, auc: 0.93247344461305, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9154804270462633}
+ct, ns, auc: 0.9154804270462633, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9161372299872935}
+ct, ns, auc: 0.9161372299872935, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9385964912280702}
+ct, ns, auc: 0.9385964912280702, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.940389294403893}
+ct, ns, auc: 0.940389294403893, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.931316950220542}
+ct, ns, auc: 0.931316950220542, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9332206255283179}
+ct, ns, auc: 0.9332206255283179, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.914616497829233}
+ct, ns, auc: 0.914616497829233, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.9383802816901409, 0.9353039598438372, 0.93247344461305, 0.9154804270462633, 0.9161372299872935, 0.9385964912280702, 0.940389294403893, 0.931316950220542, 0.9332206255283179, 0.914616497829233]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.9296
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.0102
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 64.14194107055664
+
+-------------Round number: 9-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9436619718309859}
+ct, ns, auc: 0.9436619718309859, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9347462353597323}
+ct, ns, auc: 0.9347462353597323, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9301972685887708}
+ct, ns, auc: 0.9301972685887708, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9128113879003559}
+ct, ns, auc: 0.9128113879003559, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9301143583227446}
+ct, ns, auc: 0.9301143583227446, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9385964912280702}
+ct, ns, auc: 0.9385964912280702, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9355231143552312}
+ct, ns, auc: 0.9355231143552312, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9344675488342785}
+ct, ns, auc: 0.9344675488342785, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9315300084530854}
+ct, ns, auc: 0.9315300084530854, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9117221418234442}
+ct, ns, auc: 0.9117221418234442, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.9436619718309859, 0.9347462353597323, 0.9301972685887708, 0.9128113879003559, 0.9301143583227446, 0.9385964912280702, 0.9355231143552312, 0.9344675488342785, 0.9315300084530854, 0.9117221418234442]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.9303
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.0104
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 64.35454869270325
+
+-------------Round number: 10-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9463028169014085}
+ct, ns, auc: 0.9463028169014085, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9325153374233128}
+ct, ns, auc: 0.9325153374233128, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9355083459787557}
+ct, ns, auc: 0.9355083459787557, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9137010676156584}
+ct, ns, auc: 0.9137010676156584, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9301143583227446}
+ct, ns, auc: 0.9301143583227446, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.941970310391363}
+ct, ns, auc: 0.941970310391363, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.940389294403893}
+ct, ns, auc: 0.940389294403893, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9350976685570258}
+ct, ns, auc: 0.9350976685570258, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9321639898562976}
+ct, ns, auc: 0.9321639898562976, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9059334298118669}
+ct, ns, auc: 0.9059334298118669, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.9463028169014085, 0.9325153374233128, 0.9355083459787557, 0.9137010676156584, 0.9301143583227446, 0.941970310391363, 0.940389294403893, 0.9350976685570258, 0.9321639898562976, 0.9059334298118669]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.9314
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.0125
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 64.68598341941833
+
+-------------Round number: 11-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9471830985915493}
+ct, ns, auc: 0.9471830985915493, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9369771332961517}
+ct, ns, auc: 0.9369771332961517, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9385432473444613}
+ct, ns, auc: 0.9385432473444613, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9225978647686833}
+ct, ns, auc: 0.9225978647686833, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9301143583227446}
+ct, ns, auc: 0.9301143583227446, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9439946018893387}
+ct, ns, auc: 0.9439946018893387, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.948905109489051}
+ct, ns, auc: 0.948905109489051, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9391934467548835}
+ct, ns, auc: 0.9391934467548835, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9385038038884193}
+ct, ns, auc: 0.9385038038884193, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9160636758321273}
+ct, ns, auc: 0.9160636758321273, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.9471830985915493, 0.9369771332961517, 0.9385432473444613, 0.9225978647686833, 0.9301143583227446, 0.9439946018893387, 0.948905109489051, 0.9391934467548835, 0.9385038038884193, 0.9160636758321273]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.9362
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.0105
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 69.56913113594055
+
+-------------Round number: 12-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9471830985915493}
+ct, ns, auc: 0.9471830985915493, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9380925822643614}
+ct, ns, auc: 0.9380925822643614, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9385432473444613}
+ct, ns, auc: 0.9385432473444613, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9243772241992882}
+ct, ns, auc: 0.9243772241992882, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9428208386277002}
+ct, ns, auc: 0.9428208386277002, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9453441295546559}
+ct, ns, auc: 0.9453441295546559, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9476885644768857}
+ct, ns, auc: 0.9476885644768857, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9404536862003781}
+ct, ns, auc: 0.9404536862003781, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9366018596787827}
+ct, ns, auc: 0.9366018596787827, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9175108538350217}
+ct, ns, auc: 0.9175108538350217, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.9471830985915493, 0.9380925822643614, 0.9385432473444613, 0.9243772241992882, 0.9428208386277002, 0.9453441295546559, 0.9476885644768857, 0.9404536862003781, 0.9366018596787827, 0.9175108538350217]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.9379
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.0098
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 63.834150552749634
+
+-------------Round number: 13-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9480633802816901}
+ct, ns, auc: 0.9480633802816901, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9386503067484663}
+ct, ns, auc: 0.9386503067484663, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9317147192716236}
+ct, ns, auc: 0.9317147192716236, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9190391459074733}
+ct, ns, auc: 0.9190391459074733, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9326556543837357}
+ct, ns, auc: 0.9326556543837357, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9480431848852902}
+ct, ns, auc: 0.9480431848852902, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.940389294403893}
+ct, ns, auc: 0.940389294403893, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9373030875866415}
+ct, ns, auc: 0.9373030875866415, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9397717666948436}
+ct, ns, auc: 0.9397717666948436, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.914616497829233}
+ct, ns, auc: 0.914616497829233, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.9480633802816901, 0.9386503067484663, 0.9317147192716236, 0.9190391459074733, 0.9326556543837357, 0.9480431848852902, 0.940389294403893, 0.9373030875866415, 0.9397717666948436, 0.914616497829233]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.9350
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.0110
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 64.25192189216614
+
+-------------Round number: 14-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9515845070422535}
+ct, ns, auc: 0.9515845070422535, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9442275515895148}
+ct, ns, auc: 0.9442275515895148, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9339908952959028}
+ct, ns, auc: 0.9339908952959028, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9208185053380783}
+ct, ns, auc: 0.9208185053380783, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.940279542566709}
+ct, ns, auc: 0.940279542566709, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9473684210526315}
+ct, ns, auc: 0.9473684210526315, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9513381995133819}
+ct, ns, auc: 0.9513381995133819, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9376181474480151}
+ct, ns, auc: 0.9376181474480151, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9393491124260355}
+ct, ns, auc: 0.9393491124260355, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9073806078147613}
+ct, ns, auc: 0.9073806078147613, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.9515845070422535, 0.9442275515895148, 0.9339908952959028, 0.9208185053380783, 0.940279542566709, 0.9473684210526315, 0.9513381995133819, 0.9376181474480151, 0.9393491124260355, 0.9073806078147613]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.9374
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.0139
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 64.18952965736389
+
+-------------Round number: 15-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9498239436619719}
+ct, ns, auc: 0.9498239436619719, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9475738984941439}
+ct, ns, auc: 0.9475738984941439, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9347496206373292}
+ct, ns, auc: 0.9347496206373292, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9208185053380783}
+ct, ns, auc: 0.9208185053380783, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9351969504447268}
+ct, ns, auc: 0.9351969504447268, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9487179487179487}
+ct, ns, auc: 0.9487179487179487, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9513381995133819}
+ct, ns, auc: 0.9513381995133819, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9388783868935098}
+ct, ns, auc: 0.9388783868935098, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9414623837700761}
+ct, ns, auc: 0.9414623837700761, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.918958031837916}
+ct, ns, auc: 0.918958031837916, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.9498239436619719, 0.9475738984941439, 0.9347496206373292, 0.9208185053380783, 0.9351969504447268, 0.9487179487179487, 0.9513381995133819, 0.9388783868935098, 0.9414623837700761, 0.918958031837916]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.9388
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.0116
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 68.04274296760559
+
+-------------Round number: 16-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9436619718309859}
+ct, ns, auc: 0.9436619718309859, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9436698271054099}
+ct, ns, auc: 0.9436698271054099, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9355083459787557}
+ct, ns, auc: 0.9355083459787557, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9270462633451957}
+ct, ns, auc: 0.9270462633451957, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9428208386277002}
+ct, ns, auc: 0.9428208386277002, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9487179487179487}
+ct, ns, auc: 0.9487179487179487, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9549878345498783}
+ct, ns, auc: 0.9549878345498783, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9363579080025205}
+ct, ns, auc: 0.9363579080025205, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9429416737109044}
+ct, ns, auc: 0.9429416737109044, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9175108538350217}
+ct, ns, auc: 0.9175108538350217, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.9436619718309859, 0.9436698271054099, 0.9355083459787557, 0.9270462633451957, 0.9428208386277002, 0.9487179487179487, 0.9549878345498783, 0.9363579080025205, 0.9429416737109044, 0.9175108538350217]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.9393
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.0108
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 64.05856251716614
+
+-------------Round number: 17-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9498239436619719}
+ct, ns, auc: 0.9498239436619719, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9475738984941439}
+ct, ns, auc: 0.9475738984941439, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.936267071320182}
+ct, ns, auc: 0.936267071320182, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9208185053380783}
+ct, ns, auc: 0.9208185053380783, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9351969504447268}
+ct, ns, auc: 0.9351969504447268, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9473684210526315}
+ct, ns, auc: 0.9473684210526315, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9562043795620438}
+ct, ns, auc: 0.9562043795620438, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9376181474480151}
+ct, ns, auc: 0.9376181474480151, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9423076923076923}
+ct, ns, auc: 0.9423076923076923, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9204052098408104}
+ct, ns, auc: 0.9204052098408104, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.9498239436619719, 0.9475738984941439, 0.936267071320182, 0.9208185053380783, 0.9351969504447268, 0.9473684210526315, 0.9562043795620438, 0.9376181474480151, 0.9423076923076923, 0.9204052098408104]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.9394
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.0119
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 64.09600067138672
+
+-------------Round number: 18-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9498239436619719}
+ct, ns, auc: 0.9498239436619719, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9414389291689905}
+ct, ns, auc: 0.9414389291689905, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9393019726858877}
+ct, ns, auc: 0.9393019726858877, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9243772241992882}
+ct, ns, auc: 0.9243772241992882, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9377382465057179}
+ct, ns, auc: 0.9377382465057179, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.951417004048583}
+ct, ns, auc: 0.951417004048583, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9586374695863747}
+ct, ns, auc: 0.9586374695863747, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9398235664776308}
+ct, ns, auc: 0.9398235664776308, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9404057480980558}
+ct, ns, auc: 0.9404057480980558, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9232995658465991}
+ct, ns, auc: 0.9232995658465991, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.9498239436619719, 0.9414389291689905, 0.9393019726858877, 0.9243772241992882, 0.9377382465057179, 0.951417004048583, 0.9586374695863747, 0.9398235664776308, 0.9404057480980558, 0.9232995658465991]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.9406
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.0111
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 63.82353377342224
+
+-------------Round number: 19-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9515845070422535}
+ct, ns, auc: 0.9515845070422535, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9447852760736196}
+ct, ns, auc: 0.9447852760736196, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9430955993930197}
+ct, ns, auc: 0.9430955993930197, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9234875444839857}
+ct, ns, auc: 0.9234875444839857, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9415501905972046}
+ct, ns, auc: 0.9415501905972046, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9507422402159245}
+ct, ns, auc: 0.9507422402159245, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9549878345498783}
+ct, ns, auc: 0.9549878345498783, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9410838059231253}
+ct, ns, auc: 0.9410838059231253, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9423076923076923}
+ct, ns, auc: 0.9423076923076923, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.918958031837916}
+ct, ns, auc: 0.918958031837916, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.9515845070422535, 0.9447852760736196, 0.9430955993930197, 0.9234875444839857, 0.9415501905972046, 0.9507422402159245, 0.9549878345498783, 0.9410838059231253, 0.9423076923076923, 0.918958031837916]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.9413
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.0116
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 64.22005677223206
+
+-------------Round number: 20-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9515845070422535}
+ct, ns, auc: 0.9515845070422535, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9459007250418293}
+ct, ns, auc: 0.9459007250418293, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9393019726858877}
+ct, ns, auc: 0.9393019726858877, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9359430604982206}
+ct, ns, auc: 0.9359430604982206, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9453621346886912}
+ct, ns, auc: 0.9453621346886912, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9480431848852902}
+ct, ns, auc: 0.9480431848852902, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9501216545012166}
+ct, ns, auc: 0.9501216545012166, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9445494643982356}
+ct, ns, auc: 0.9445494643982356, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9418850380388842}
+ct, ns, auc: 0.9418850380388842, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9232995658465991}
+ct, ns, auc: 0.9232995658465991, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.9515845070422535, 0.9459007250418293, 0.9393019726858877, 0.9359430604982206, 0.9453621346886912, 0.9480431848852902, 0.9501216545012166, 0.9445494643982356, 0.9418850380388842, 0.9232995658465991]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.9426
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.0083
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 69.7282452583313
+
+-------------Round number: 21-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.948943661971831}
+ct, ns, auc: 0.948943661971831, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9419966536530954}
+ct, ns, auc: 0.9419966536530954, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9453717754172989}
+ct, ns, auc: 0.9453717754172989, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9288256227758007}
+ct, ns, auc: 0.9288256227758007, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9415501905972046}
+ct, ns, auc: 0.9415501905972046, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9493927125506073}
+ct, ns, auc: 0.9493927125506073, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9476885644768857}
+ct, ns, auc: 0.9476885644768857, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9426591052299937}
+ct, ns, auc: 0.9426591052299937, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9420963651732882}
+ct, ns, auc: 0.9420963651732882, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9232995658465991}
+ct, ns, auc: 0.9232995658465991, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.948943661971831, 0.9419966536530954, 0.9453717754172989, 0.9288256227758007, 0.9415501905972046, 0.9493927125506073, 0.9476885644768857, 0.9426591052299937, 0.9420963651732882, 0.9232995658465991]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.9412
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.0086
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 64.22788739204407
+
+-------------Round number: 22-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9533450704225352}
+ct, ns, auc: 0.9533450704225352, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9431121026213051}
+ct, ns, auc: 0.9431121026213051, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9423368740515933}
+ct, ns, auc: 0.9423368740515933, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9270462633451957}
+ct, ns, auc: 0.9270462633451957, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.940279542566709}
+ct, ns, auc: 0.940279542566709, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9500674763832658}
+ct, ns, auc: 0.9500674763832658, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9452554744525548}
+ct, ns, auc: 0.9452554744525548, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9436042848141147}
+ct, ns, auc: 0.9436042848141147, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9437869822485208}
+ct, ns, auc: 0.9437869822485208, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9218523878437048}
+ct, ns, auc: 0.9218523878437048, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.9533450704225352, 0.9431121026213051, 0.9423368740515933, 0.9270462633451957, 0.940279542566709, 0.9500674763832658, 0.9452554744525548, 0.9436042848141147, 0.9437869822485208, 0.9218523878437048]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.9411
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.0096
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 64.15873146057129
+
+-------------Round number: 23-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9515845070422535}
+ct, ns, auc: 0.9515845070422535, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9436698271054099}
+ct, ns, auc: 0.9436698271054099, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9453717754172989}
+ct, ns, auc: 0.9453717754172989, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9279359430604982}
+ct, ns, auc: 0.9279359430604982, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9390088945362135}
+ct, ns, auc: 0.9390088945362135, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.946693657219973}
+ct, ns, auc: 0.946693657219973, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9476885644768857}
+ct, ns, auc: 0.9476885644768857, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9426591052299937}
+ct, ns, auc: 0.9426591052299937, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9406170752324599}
+ct, ns, auc: 0.9406170752324599, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9232995658465991}
+ct, ns, auc: 0.9232995658465991, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.9515845070422535, 0.9436698271054099, 0.9453717754172989, 0.9279359430604982, 0.9390088945362135, 0.946693657219973, 0.9476885644768857, 0.9426591052299937, 0.9406170752324599, 0.9232995658465991]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.9409
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.0089
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 64.1887001991272
+
+-------------Round number: 24-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9515845070422535}
+ct, ns, auc: 0.9515845070422535, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9442275515895148}
+ct, ns, auc: 0.9442275515895148, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9385432473444613}
+ct, ns, auc: 0.9385432473444613, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9306049822064056}
+ct, ns, auc: 0.9306049822064056, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9415501905972046}
+ct, ns, auc: 0.9415501905972046, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9527665317139001}
+ct, ns, auc: 0.9527665317139001, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9501216545012166}
+ct, ns, auc: 0.9501216545012166, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9404536862003781}
+ct, ns, auc: 0.9404536862003781, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9414623837700761}
+ct, ns, auc: 0.9414623837700761, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9232995658465991}
+ct, ns, auc: 0.9232995658465991, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.9515845070422535, 0.9442275515895148, 0.9385432473444613, 0.9306049822064056, 0.9415501905972046, 0.9527665317139001, 0.9501216545012166, 0.9404536862003781, 0.9414623837700761, 0.9232995658465991]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.9415
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.0093
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 66.27398943901062
+
+-------------Round number: 25-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.954225352112676}
+ct, ns, auc: 0.954225352112676, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9436698271054099}
+ct, ns, auc: 0.9436698271054099, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9423368740515933}
+ct, ns, auc: 0.9423368740515933, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9306049822064056}
+ct, ns, auc: 0.9306049822064056, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9428208386277002}
+ct, ns, auc: 0.9428208386277002, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9507422402159245}
+ct, ns, auc: 0.9507422402159245, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.948905109489051}
+ct, ns, auc: 0.948905109489051, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9426591052299937}
+ct, ns, auc: 0.9426591052299937, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9427303465765005}
+ct, ns, auc: 0.9427303465765005, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9276410998552822}
+ct, ns, auc: 0.9276410998552822, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.954225352112676, 0.9436698271054099, 0.9423368740515933, 0.9306049822064056, 0.9428208386277002, 0.9507422402159245, 0.948905109489051, 0.9426591052299937, 0.9427303465765005, 0.9276410998552822]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.9426
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.0082
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 64.68932771682739
+
+-------------Round number: 26-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9515845070422535}
+ct, ns, auc: 0.9515845070422535, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9408812046848857}
+ct, ns, auc: 0.9408812046848857, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9423368740515933}
+ct, ns, auc: 0.9423368740515933, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9252669039145908}
+ct, ns, auc: 0.9252669039145908, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9453621346886912}
+ct, ns, auc: 0.9453621346886912, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9520917678812416}
+ct, ns, auc: 0.9520917678812416, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9525547445255474}
+ct, ns, auc: 0.9525547445255474, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9410838059231253}
+ct, ns, auc: 0.9410838059231253, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9433643279797126}
+ct, ns, auc: 0.9433643279797126, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9261939218523878}
+ct, ns, auc: 0.9261939218523878, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.9515845070422535, 0.9408812046848857, 0.9423368740515933, 0.9252669039145908, 0.9453621346886912, 0.9520917678812416, 0.9525547445255474, 0.9410838059231253, 0.9433643279797126, 0.9261939218523878]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.9421
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.0097
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 63.77972674369812
+
+-------------Round number: 27-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9515845070422535}
+ct, ns, auc: 0.9515845070422535, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9403234802007808}
+ct, ns, auc: 0.9403234802007808, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9415781487101669}
+ct, ns, auc: 0.9415781487101669, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9323843416370107}
+ct, ns, auc: 0.9323843416370107, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9440914866581956}
+ct, ns, auc: 0.9440914866581956, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9507422402159245}
+ct, ns, auc: 0.9507422402159245, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9513381995133819}
+ct, ns, auc: 0.9513381995133819, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.941398865784499}
+ct, ns, auc: 0.941398865784499, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9414623837700761}
+ct, ns, auc: 0.9414623837700761, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9290882778581766}
+ct, ns, auc: 0.9290882778581766, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.9515845070422535, 0.9403234802007808, 0.9415781487101669, 0.9323843416370107, 0.9440914866581956, 0.9507422402159245, 0.9513381995133819, 0.941398865784499, 0.9414623837700761, 0.9290882778581766]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.9424
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.0076
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 64.14069747924805
+
+-------------Round number: 28-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.948943661971831}
+ct, ns, auc: 0.948943661971831, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9464584495259342}
+ct, ns, auc: 0.9464584495259342, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9423368740515933}
+ct, ns, auc: 0.9423368740515933, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9314946619217082}
+ct, ns, auc: 0.9314946619217082, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9415501905972046}
+ct, ns, auc: 0.9415501905972046, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9568151147098516}
+ct, ns, auc: 0.9568151147098516, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9476885644768857}
+ct, ns, auc: 0.9476885644768857, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.94234404536862}
+ct, ns, auc: 0.94234404536862, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9431530008453085}
+ct, ns, auc: 0.9431530008453085, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9290882778581766}
+ct, ns, auc: 0.9290882778581766, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.948943661971831, 0.9464584495259342, 0.9423368740515933, 0.9314946619217082, 0.9415501905972046, 0.9568151147098516, 0.9476885644768857, 0.94234404536862, 0.9431530008453085, 0.9290882778581766]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.9430
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.0081
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 63.803364753723145
+
+-------------Round number: 29-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9524647887323944}
+ct, ns, auc: 0.9524647887323944, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9481316229782487}
+ct, ns, auc: 0.9481316229782487, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9430955993930197}
+ct, ns, auc: 0.9430955993930197, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9279359430604982}
+ct, ns, auc: 0.9279359430604982, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9466327827191868}
+ct, ns, auc: 0.9466327827191868, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9520917678812416}
+ct, ns, auc: 0.9520917678812416, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.948905109489051}
+ct, ns, auc: 0.948905109489051, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.945179584120983}
+ct, ns, auc: 0.945179584120983, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9439983093829247}
+ct, ns, auc: 0.9439983093829247, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9247467438494935}
+ct, ns, auc: 0.9247467438494935, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.9524647887323944, 0.9481316229782487, 0.9430955993930197, 0.9279359430604982, 0.9466327827191868, 0.9520917678812416, 0.948905109489051, 0.945179584120983, 0.9439983093829247, 0.9247467438494935]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.9433
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.0095
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 71.1720495223999
+
+-------------Round number: 30-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9498239436619719}
+ct, ns, auc: 0.9498239436619719, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9459007250418293}
+ct, ns, auc: 0.9459007250418293, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9415781487101669}
+ct, ns, auc: 0.9415781487101669, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9306049822064056}
+ct, ns, auc: 0.9306049822064056, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9453621346886912}
+ct, ns, auc: 0.9453621346886912, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9500674763832658}
+ct, ns, auc: 0.9500674763832658, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.948905109489051}
+ct, ns, auc: 0.948905109489051, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9439193446754883}
+ct, ns, auc: 0.9439193446754883, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.944843617920541}
+ct, ns, auc: 0.944843617920541, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9261939218523878}
+ct, ns, auc: 0.9261939218523878, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.9498239436619719, 0.9459007250418293, 0.9415781487101669, 0.9306049822064056, 0.9453621346886912, 0.9500674763832658, 0.948905109489051, 0.9439193446754883, 0.944843617920541, 0.9261939218523878]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.9427
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.0081
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 64.03479957580566
+
+-------------Round number: 31-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9507042253521126}
+ct, ns, auc: 0.9507042253521126, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9459007250418293}
+ct, ns, auc: 0.9459007250418293, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9446130500758725}
+ct, ns, auc: 0.9446130500758725, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9288256227758007}
+ct, ns, auc: 0.9288256227758007, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9415501905972046}
+ct, ns, auc: 0.9415501905972046, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.951417004048583}
+ct, ns, auc: 0.951417004048583, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9513381995133819}
+ct, ns, auc: 0.9513381995133819, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9429741650913673}
+ct, ns, auc: 0.9429741650913673, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.944632290786137}
+ct, ns, auc: 0.944632290786137, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9261939218523878}
+ct, ns, auc: 0.9261939218523878, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.9507042253521126, 0.9459007250418293, 0.9446130500758725, 0.9288256227758007, 0.9415501905972046, 0.951417004048583, 0.9513381995133819, 0.9429741650913673, 0.944632290786137, 0.9261939218523878]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.9428
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.0088
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 64.06979584693909
+
+-------------Round number: 32-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9498239436619719}
+ct, ns, auc: 0.9498239436619719, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.950920245398773}
+ct, ns, auc: 0.950920245398773, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9446130500758725}
+ct, ns, auc: 0.9446130500758725, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9314946619217082}
+ct, ns, auc: 0.9314946619217082, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9453621346886912}
+ct, ns, auc: 0.9453621346886912, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9507422402159245}
+ct, ns, auc: 0.9507422402159245, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9525547445255474}
+ct, ns, auc: 0.9525547445255474, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.944234404536862}
+ct, ns, auc: 0.944234404536862, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9420963651732882}
+ct, ns, auc: 0.9420963651732882, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9204052098408104}
+ct, ns, auc: 0.9204052098408104, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.9498239436619719, 0.950920245398773, 0.9446130500758725, 0.9314946619217082, 0.9453621346886912, 0.9507422402159245, 0.9525547445255474, 0.944234404536862, 0.9420963651732882, 0.9204052098408104]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.9432
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.0101
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 64.07670211791992
+
+-------------Round number: 33-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.948943661971831}
+ct, ns, auc: 0.948943661971831, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.947016174010039}
+ct, ns, auc: 0.947016174010039, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9438543247344461}
+ct, ns, auc: 0.9438543247344461, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9252669039145908}
+ct, ns, auc: 0.9252669039145908, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9428208386277002}
+ct, ns, auc: 0.9428208386277002, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9480431848852902}
+ct, ns, auc: 0.9480431848852902, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9464720194647201}
+ct, ns, auc: 0.9464720194647201, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9454946439823566}
+ct, ns, auc: 0.9454946439823566, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9423076923076923}
+ct, ns, auc: 0.9423076923076923, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9175108538350217}
+ct, ns, auc: 0.9175108538350217, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.948943661971831, 0.947016174010039, 0.9438543247344461, 0.9252669039145908, 0.9428208386277002, 0.9480431848852902, 0.9464720194647201, 0.9454946439823566, 0.9423076923076923, 0.9175108538350217]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.9408
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.0106
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 64.95611882209778
+
+-------------Round number: 34-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9498239436619719}
+ct, ns, auc: 0.9498239436619719, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9459007250418293}
+ct, ns, auc: 0.9459007250418293, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9438543247344461}
+ct, ns, auc: 0.9438543247344461, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9261565836298933}
+ct, ns, auc: 0.9261565836298933, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.940279542566709}
+ct, ns, auc: 0.940279542566709, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9500674763832658}
+ct, ns, auc: 0.9500674763832658, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9476885644768857}
+ct, ns, auc: 0.9476885644768857, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9458097038437303}
+ct, ns, auc: 0.9458097038437303, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9425190194420964}
+ct, ns, auc: 0.9425190194420964, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9247467438494935}
+ct, ns, auc: 0.9247467438494935, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.9498239436619719, 0.9459007250418293, 0.9438543247344461, 0.9261565836298933, 0.940279542566709, 0.9500674763832658, 0.9476885644768857, 0.9458097038437303, 0.9425190194420964, 0.9247467438494935]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.9417
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.0091
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 64.6278727054596
+
+-------------Round number: 35-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9445422535211268}
+ct, ns, auc: 0.9445422535211268, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.950920245398773}
+ct, ns, auc: 0.950920245398773, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9438543247344461}
+ct, ns, auc: 0.9438543247344461, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9332740213523132}
+ct, ns, auc: 0.9332740213523132, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9453621346886912}
+ct, ns, auc: 0.9453621346886912, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9453441295546559}
+ct, ns, auc: 0.9453441295546559, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9476885644768857}
+ct, ns, auc: 0.9476885644768857, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9420289855072463}
+ct, ns, auc: 0.9420289855072463, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9416737109044802}
+ct, ns, auc: 0.9416737109044802, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9261939218523878}
+ct, ns, auc: 0.9261939218523878, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.9445422535211268, 0.950920245398773, 0.9438543247344461, 0.9332740213523132, 0.9453621346886912, 0.9453441295546559, 0.9476885644768857, 0.9420289855072463, 0.9416737109044802, 0.9261939218523878]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.9421
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.0072
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 64.19586086273193
+
+-------------Round number: 36-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9533450704225352}
+ct, ns, auc: 0.9533450704225352, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9514779698828778}
+ct, ns, auc: 0.9514779698828778, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9430955993930197}
+ct, ns, auc: 0.9430955993930197, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9306049822064056}
+ct, ns, auc: 0.9306049822064056, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9466327827191868}
+ct, ns, auc: 0.9466327827191868, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9500674763832658}
+ct, ns, auc: 0.9500674763832658, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.948905109489051}
+ct, ns, auc: 0.948905109489051, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9429741650913673}
+ct, ns, auc: 0.9429741650913673, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9429416737109044}
+ct, ns, auc: 0.9429416737109044, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.918958031837916}
+ct, ns, auc: 0.918958031837916, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.9533450704225352, 0.9514779698828778, 0.9430955993930197, 0.9306049822064056, 0.9466327827191868, 0.9500674763832658, 0.948905109489051, 0.9429741650913673, 0.9429416737109044, 0.918958031837916]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.9429
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.0106
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 65.09950828552246
+
+-------------Round number: 37-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9524647887323944}
+ct, ns, auc: 0.9524647887323944, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9520356943669828}
+ct, ns, auc: 0.9520356943669828, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9468892261001517}
+ct, ns, auc: 0.9468892261001517, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9314946619217082}
+ct, ns, auc: 0.9314946619217082, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9440914866581956}
+ct, ns, auc: 0.9440914866581956, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9487179487179487}
+ct, ns, auc: 0.9487179487179487, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9440389294403893}
+ct, ns, auc: 0.9440389294403893, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9454946439823566}
+ct, ns, auc: 0.9454946439823566, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.941251056635672}
+ct, ns, auc: 0.941251056635672, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9247467438494935}
+ct, ns, auc: 0.9247467438494935, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.9524647887323944, 0.9520356943669828, 0.9468892261001517, 0.9314946619217082, 0.9440914866581956, 0.9487179487179487, 0.9440389294403893, 0.9454946439823566, 0.941251056635672, 0.9247467438494935]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.9431
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.0088
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 63.90790510177612
+
+-------------Round number: 38-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9436619718309859}
+ct, ns, auc: 0.9436619718309859, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9537088678192973}
+ct, ns, auc: 0.9537088678192973, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9438543247344461}
+ct, ns, auc: 0.9438543247344461, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9323843416370107}
+ct, ns, auc: 0.9323843416370107, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9466327827191868}
+ct, ns, auc: 0.9466327827191868, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9487179487179487}
+ct, ns, auc: 0.9487179487179487, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9416058394160584}
+ct, ns, auc: 0.9416058394160584, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.944234404536862}
+ct, ns, auc: 0.944234404536862, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9423076923076923}
+ct, ns, auc: 0.9423076923076923, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9232995658465991}
+ct, ns, auc: 0.9232995658465991, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.9436619718309859, 0.9537088678192973, 0.9438543247344461, 0.9323843416370107, 0.9466327827191868, 0.9487179487179487, 0.9416058394160584, 0.944234404536862, 0.9423076923076923, 0.9232995658465991]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.9420
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.0085
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 70.53468823432922
+
+-------------Round number: 39-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9507042253521126}
+ct, ns, auc: 0.9507042253521126, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9542665923034022}
+ct, ns, auc: 0.9542665923034022, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9430955993930197}
+ct, ns, auc: 0.9430955993930197, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9350533807829181}
+ct, ns, auc: 0.9350533807829181, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9440914866581956}
+ct, ns, auc: 0.9440914866581956, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9527665317139001}
+ct, ns, auc: 0.9527665317139001, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9416058394160584}
+ct, ns, auc: 0.9416058394160584, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9420289855072463}
+ct, ns, auc: 0.9420289855072463, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9423076923076923}
+ct, ns, auc: 0.9423076923076923, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9247467438494935}
+ct, ns, auc: 0.9247467438494935, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.9507042253521126, 0.9542665923034022, 0.9430955993930197, 0.9350533807829181, 0.9440914866581956, 0.9527665317139001, 0.9416058394160584, 0.9420289855072463, 0.9423076923076923, 0.9247467438494935]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.9431
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.0087
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 64.06741881370544
+
+-------------Round number: 40-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9524647887323944}
+ct, ns, auc: 0.9524647887323944, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.950920245398773}
+ct, ns, auc: 0.950920245398773, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9461305007587253}
+ct, ns, auc: 0.9461305007587253, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9332740213523132}
+ct, ns, auc: 0.9332740213523132, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9428208386277002}
+ct, ns, auc: 0.9428208386277002, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9520917678812416}
+ct, ns, auc: 0.9520917678812416, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9428223844282239}
+ct, ns, auc: 0.9428223844282239, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9448645242596093}
+ct, ns, auc: 0.9448645242596093, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9442096365173288}
+ct, ns, auc: 0.9442096365173288, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9261939218523878}
+ct, ns, auc: 0.9261939218523878, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.9524647887323944, 0.950920245398773, 0.9461305007587253, 0.9332740213523132, 0.9428208386277002, 0.9520917678812416, 0.9428223844282239, 0.9448645242596093, 0.9442096365173288, 0.9261939218523878]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.9436
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.0083
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 63.989408016204834
+
+-------------Round number: 41-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9533450704225352}
+ct, ns, auc: 0.9533450704225352, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9498047964305633}
+ct, ns, auc: 0.9498047964305633, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9430955993930197}
+ct, ns, auc: 0.9430955993930197, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9359430604982206}
+ct, ns, auc: 0.9359430604982206, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9440914866581956}
+ct, ns, auc: 0.9440914866581956, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9527665317139001}
+ct, ns, auc: 0.9527665317139001, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9428223844282239}
+ct, ns, auc: 0.9428223844282239, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.945179584120983}
+ct, ns, auc: 0.945179584120983, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.944632290786137}
+ct, ns, auc: 0.944632290786137, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9218523878437048}
+ct, ns, auc: 0.9218523878437048, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.9533450704225352, 0.9498047964305633, 0.9430955993930197, 0.9359430604982206, 0.9440914866581956, 0.9527665317139001, 0.9428223844282239, 0.945179584120983, 0.944632290786137, 0.9218523878437048]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.9434
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.0091
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 64.721116065979
+
+-------------Round number: 42-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9559859154929577}
+ct, ns, auc: 0.9559859154929577, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9498047964305633}
+ct, ns, auc: 0.9498047964305633, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9430955993930197}
+ct, ns, auc: 0.9430955993930197, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9368327402135231}
+ct, ns, auc: 0.9368327402135231, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9440914866581956}
+ct, ns, auc: 0.9440914866581956, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.951417004048583}
+ct, ns, auc: 0.951417004048583, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.940389294403893}
+ct, ns, auc: 0.940389294403893, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9407687460617518}
+ct, ns, auc: 0.9407687460617518, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9435756551141167}
+ct, ns, auc: 0.9435756551141167, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9261939218523878}
+ct, ns, auc: 0.9261939218523878, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.9559859154929577, 0.9498047964305633, 0.9430955993930197, 0.9368327402135231, 0.9440914866581956, 0.951417004048583, 0.940389294403893, 0.9407687460617518, 0.9435756551141167, 0.9261939218523878]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.9432
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.0083
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 64.40395212173462
+
+-------------Round number: 43-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9480633802816901}
+ct, ns, auc: 0.9480633802816901, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9475738984941439}
+ct, ns, auc: 0.9475738984941439, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9408194233687405}
+ct, ns, auc: 0.9408194233687405, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9297153024911032}
+ct, ns, auc: 0.9297153024911032, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9479034307496823}
+ct, ns, auc: 0.9479034307496823, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9547908232118758}
+ct, ns, auc: 0.9547908232118758, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9440389294403893}
+ct, ns, auc: 0.9440389294403893, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.945179584120983}
+ct, ns, auc: 0.945179584120983, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9437869822485208}
+ct, ns, auc: 0.9437869822485208, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9261939218523878}
+ct, ns, auc: 0.9261939218523878, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.9480633802816901, 0.9475738984941439, 0.9408194233687405, 0.9297153024911032, 0.9479034307496823, 0.9547908232118758, 0.9440389294403893, 0.945179584120983, 0.9437869822485208, 0.9261939218523878]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.9428
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.0087
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 65.82640886306763
+
+-------------Round number: 44-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9515845070422535}
+ct, ns, auc: 0.9515845070422535, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9498047964305633}
+ct, ns, auc: 0.9498047964305633, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9453717754172989}
+ct, ns, auc: 0.9453717754172989, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9332740213523132}
+ct, ns, auc: 0.9332740213523132, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9479034307496823}
+ct, ns, auc: 0.9479034307496823, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9534412955465587}
+ct, ns, auc: 0.9534412955465587, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9452554744525548}
+ct, ns, auc: 0.9452554744525548, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9445494643982356}
+ct, ns, auc: 0.9445494643982356, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9439983093829247}
+ct, ns, auc: 0.9439983093829247, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9305354558610709}
+ct, ns, auc: 0.9305354558610709, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.9515845070422535, 0.9498047964305633, 0.9453717754172989, 0.9332740213523132, 0.9479034307496823, 0.9534412955465587, 0.9452554744525548, 0.9445494643982356, 0.9439983093829247, 0.9305354558610709]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.9446
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.0074
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 64.17487692832947
+
+-------------Round number: 45-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.948943661971831}
+ct, ns, auc: 0.948943661971831, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9475738984941439}
+ct, ns, auc: 0.9475738984941439, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9468892261001517}
+ct, ns, auc: 0.9468892261001517, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9323843416370107}
+ct, ns, auc: 0.9323843416370107, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9440914866581956}
+ct, ns, auc: 0.9440914866581956, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9527665317139001}
+ct, ns, auc: 0.9527665317139001, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9464720194647201}
+ct, ns, auc: 0.9464720194647201, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9420289855072463}
+ct, ns, auc: 0.9420289855072463, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9444209636517329}
+ct, ns, auc: 0.9444209636517329, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9305354558610709}
+ct, ns, auc: 0.9305354558610709, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.948943661971831, 0.9475738984941439, 0.9468892261001517, 0.9323843416370107, 0.9440914866581956, 0.9527665317139001, 0.9464720194647201, 0.9420289855072463, 0.9444209636517329, 0.9305354558610709]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.9436
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.0070
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 64.26844954490662
+
+-------------Round number: 46-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9498239436619719}
+ct, ns, auc: 0.9498239436619719, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9531511433351925}
+ct, ns, auc: 0.9531511433351925, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9423368740515933}
+ct, ns, auc: 0.9423368740515933, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9341637010676157}
+ct, ns, auc: 0.9341637010676157, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9529860228716646}
+ct, ns, auc: 0.9529860228716646, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9527665317139001}
+ct, ns, auc: 0.9527665317139001, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9440389294403893}
+ct, ns, auc: 0.9440389294403893, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.943289224952741}
+ct, ns, auc: 0.943289224952741, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9423076923076923}
+ct, ns, auc: 0.9423076923076923, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9305354558610709}
+ct, ns, auc: 0.9305354558610709, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.9498239436619719, 0.9531511433351925, 0.9423368740515933, 0.9341637010676157, 0.9529860228716646, 0.9527665317139001, 0.9440389294403893, 0.943289224952741, 0.9423076923076923, 0.9305354558610709]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.9445
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.0079
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 63.91941571235657
+
+-------------Round number: 47-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9507042253521126}
+ct, ns, auc: 0.9507042253521126, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9486893474623536}
+ct, ns, auc: 0.9486893474623536, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9453717754172989}
+ct, ns, auc: 0.9453717754172989, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9341637010676157}
+ct, ns, auc: 0.9341637010676157, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9453621346886912}
+ct, ns, auc: 0.9453621346886912, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.951417004048583}
+ct, ns, auc: 0.951417004048583, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.948905109489051}
+ct, ns, auc: 0.948905109489051, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9445494643982356}
+ct, ns, auc: 0.9445494643982356, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9444209636517329}
+ct, ns, auc: 0.9444209636517329, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9204052098408104}
+ct, ns, auc: 0.9204052098408104, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.9507042253521126, 0.9486893474623536, 0.9453717754172989, 0.9341637010676157, 0.9453621346886912, 0.951417004048583, 0.948905109489051, 0.9445494643982356, 0.9444209636517329, 0.9204052098408104]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.9434
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.0094
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 67.95806336402893
+
+-------------Round number: 48-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9498239436619719}
+ct, ns, auc: 0.9498239436619719, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9475738984941439}
+ct, ns, auc: 0.9475738984941439, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9438543247344461}
+ct, ns, auc: 0.9438543247344461, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9350533807829181}
+ct, ns, auc: 0.9350533807829181, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9440914866581956}
+ct, ns, auc: 0.9440914866581956, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9520917678812416}
+ct, ns, auc: 0.9520917678812416, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9525547445255474}
+ct, ns, auc: 0.9525547445255474, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.941398865784499}
+ct, ns, auc: 0.941398865784499, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9452662721893491}
+ct, ns, auc: 0.9452662721893491, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9247467438494935}
+ct, ns, auc: 0.9247467438494935, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.9498239436619719, 0.9475738984941439, 0.9438543247344461, 0.9350533807829181, 0.9440914866581956, 0.9520917678812416, 0.9525547445255474, 0.941398865784499, 0.9452662721893491, 0.9247467438494935]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.9436
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.0085
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 64.38410544395447
+
+-------------Round number: 49-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9515845070422535}
+ct, ns, auc: 0.9515845070422535, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9475738984941439}
+ct, ns, auc: 0.9475738984941439, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9430955993930197}
+ct, ns, auc: 0.9430955993930197, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9368327402135231}
+ct, ns, auc: 0.9368327402135231, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9491740787801779}
+ct, ns, auc: 0.9491740787801779, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9500674763832658}
+ct, ns, auc: 0.9500674763832658, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9476885644768857}
+ct, ns, auc: 0.9476885644768857, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9401386263390044}
+ct, ns, auc: 0.9401386263390044, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9423076923076923}
+ct, ns, auc: 0.9423076923076923, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9232995658465991}
+ct, ns, auc: 0.9232995658465991, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.9515845070422535, 0.9475738984941439, 0.9430955993930197, 0.9368327402135231, 0.9491740787801779, 0.9500674763832658, 0.9476885644768857, 0.9401386263390044, 0.9423076923076923, 0.9232995658465991]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.9432
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.0084
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 64.03392243385315
+
+-------------Round number: 50-------------
+
+Evaluate global model
+Loaded test data from ../dataset/sst2/test/0.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9507042253521126}
+ct, ns, auc: 0.9507042253521126, 0, 0
+Loaded test data from ../dataset/sst2/test/1.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9481316229782487}
+ct, ns, auc: 0.9481316229782487, 0, 0
+Loaded test data from ../dataset/sst2/test/2.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.936267071320182}
+ct, ns, auc: 0.936267071320182, 0, 0
+Loaded test data from ../dataset/sst2/test/3.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9368327402135231}
+ct, ns, auc: 0.9368327402135231, 0, 0
+Loaded test data from ../dataset/sst2/test/4.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9428208386277002}
+ct, ns, auc: 0.9428208386277002, 0, 0
+Loaded test data from ../dataset/sst2/test/5.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.946693657219973}
+ct, ns, auc: 0.946693657219973, 0, 0
+Loaded test data from ../dataset/sst2/test/6.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9476885644768857}
+ct, ns, auc: 0.9476885644768857, 0, 0
+Loaded test data from ../dataset/sst2/test/7.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9398235664776308}
+ct, ns, auc: 0.9398235664776308, 0, 0
+Loaded test data from ../dataset/sst2/test/8.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9425190194420964}
+ct, ns, auc: 0.9425190194420964, 0, 0
+Loaded test data from ../dataset/sst2/test/9.npz
+Data length: 1
+metric.compute(): {'accuracy': 0.9175108538350217}
+ct, ns, auc: 0.9175108538350217, 0, 0
+ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+stats[1]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+stats[2]: [0.9507042253521126, 0.9481316229782487, 0.936267071320182, 0.9368327402135231, 0.9428208386277002, 0.946693657219973, 0.9476885644768857, 0.9398235664776308, 0.9425190194420964, 0.9175108538350217]
+stats[3]: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Averaged Test Accuracy: 0.9409
+Averaged Test AUC: 0.0000
+Std Test Accuracy: 0.0095
+Std Test AUC: 0.0000
+Loaded train data from ../dataset/sst2/train/2.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/0.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/4.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/8.npz
+Data length: 1
+Time elapsed 0.16 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/5.npz
+Data length: 1
+Time elapsed 0.05 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/1.npz
+Data length: 1
+Time elapsed 0.06 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/6.npz
+Data length: 1
+Time elapsed 0.03 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/9.npz
+Data length: 1
+Time elapsed 0.02 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/7.npz
+Data length: 1
+Time elapsed 0.11 min
+Memory used: 8.37 GB
+Loaded train data from ../dataset/sst2/train/3.npz
+Data length: 1
+Time elapsed 0.04 min
+Memory used: 8.37 GB
+------------------------- time cost ------------------------- 64.22673153877258
+
+Best accuracy.
+0.9445718530633455
+
+Average time cost per round.
+65.1138939332962
+File path: ../results/sst2_flora_test_0.h5
+
+Average time cost: 3346.61s.
+Length:  51
+std for best accurancy: 0.0
+mean for best accurancy: 0.9445718530633455
+All done!
